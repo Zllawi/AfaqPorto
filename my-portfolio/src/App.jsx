@@ -57,8 +57,54 @@ export default function App() {
               </div>
             </div>
 
-            <aside className="hero-media">
-              <img src="/brand/afaq-hero.svg" alt="Afaq hero" loading="eager" />
+            <aside className="hero-skills">
+              <div className="skills-container">
+                <h3 className="skills-title">المهارات الرئيسية</h3>
+                <div className="skills-grid">
+                  <div className="skill-item">
+                    <div className="skill-name">React</div>
+                    <div className="skill-bar">
+                      <div className="skill-progress" style={{width: '95%'}}></div>
+                    </div>
+                    <div className="skill-percent">95%</div>
+                  </div>
+                  <div className="skill-item">
+                    <div className="skill-name">Node.js</div>
+                    <div className="skill-bar">
+                      <div className="skill-progress" style={{width: '90%'}}></div>
+                    </div>
+                    <div className="skill-percent">90%</div>
+                  </div>
+                  <div className="skill-item">
+                    <div className="skill-name">MongoDB</div>
+                    <div className="skill-bar">
+                      <div className="skill-progress" style={{width: '88%'}}></div>
+                    </div>
+                    <div className="skill-percent">88%</div>
+                  </div>
+                  <div className="skill-item">
+                    <div className="skill-name">JavaScript</div>
+                    <div className="skill-bar">
+                      <div className="skill-progress" style={{width: '92%'}}></div>
+                    </div>
+                    <div className="skill-percent">92%</div>
+                  </div>
+                  <div className="skill-item">
+                    <div className="skill-name">TailwindCSS</div>
+                    <div className="skill-bar">
+                      <div className="skill-progress" style={{width: '93%'}}></div>
+                    </div>
+                    <div className="skill-percent">93%</div>
+                  </div>
+                  <div className="skill-item">
+                    <div className="skill-name">REST APIs</div>
+                    <div className="skill-bar">
+                      <div className="skill-progress" style={{width: '91%'}}></div>
+                    </div>
+                    <div className="skill-percent">91%</div>
+                  </div>
+                </div>
+              </div>
             </aside>
 
           </div>
