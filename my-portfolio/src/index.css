@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -200,7 +200,7 @@ img {
   position: relative;
   padding: 3.5rem 0 3rem;
   /* Full-cover hero image */
-  background-image: url('/brand/afaq-hero.png');
+  background-image: url('/brand/afaq-hero.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -614,7 +614,7 @@ section {
 }
 
 .card ul li::before {
-  content: "•";
+  content: "â€¢";
   margin-left: 0.45rem;
   color: #f97316;
 }
@@ -818,7 +818,7 @@ section {
 }
 
 .contact-card li::before {
-  content: "›";
+  content: "â€؛";
   margin-left: 0.35rem;
   color: #f97316;
 }
@@ -900,3 +900,4 @@ section {
   font-size: 22px;
   cursor: pointer;
 }
+
