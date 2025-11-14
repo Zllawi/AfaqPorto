@@ -186,13 +186,13 @@ export default function App() {
                 <span className="project-tag">MongoDB</span>
                 <span className="project-tag">Licensing</span>
               </div>
-              <div className="project-links">
-                                <a href="https://afaq-3y10.onrender.com/gamehall.html" target="_blank" rel="noreferrer">&#1605;&#1588;&#1575;&#1607;&#1583;&#1577; &#1608;&#1575;&#1580;&#1607;&#1577; &#1575;&#1604;&#1589;&#1575;&#1604;&#1577;</a>
-                <a href="#game-hall-shot" onClick={(e)=>{e.preventDefault(); setViewer({src:"/screenshots/game-hall-screenshot.svg", alt:"صورة شاشة نظام إدارة صالة الألعاب"});}}>
-                  مشاهدة صورة
+              <div className="project-links">                <a href="https://afaq-3y10.onrender.com/gamehall.html" target="_blank" rel="noreferrer">
+                  &#1605;&#1588;&#1575;&#1607;&#1583;&#1577; &#1608;&#1575;&#1580;&#1607;&#1577; &#1575;&#1604;&#1589;&#1575;&#1604;&#1577;
                 </a>
-                </a>
-              </div>
+                <span>·</span>
+                <a href="#game-hall-shot" onClick={(e)=>{e.preventDefault(); setViewer({src:"/screenshots/game-hall-screenshot.svg", alt:"Game Hall screenshot"});}}>
+                  &#1605;&#1588;&#1575;&#1607;&#1583;&#1577; &#1589;&#1608;&#1585;&#1577;
+                </a>            </div>
             </article>
 
             {/* مشروع 2 */}
