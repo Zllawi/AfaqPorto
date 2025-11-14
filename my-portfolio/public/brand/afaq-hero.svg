@@ -1,0 +1,193 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-25px); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+      }
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes glow-pulse {
+        0%, 100% { filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.5)); }
+        50% { filter: drop-shadow(0 0 20px rgba(79, 70, 229, 0.8)); }
+      }
+      .floating { animation: float 4s ease-in-out infinite; }
+      .pulsing { animation: pulse 3s ease-in-out infinite; }
+      .rotating { animation: rotate 25s linear infinite; }
+      .glowing { animation: glow-pulse 2s ease-in-out infinite; }
+    </style>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a8f3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="grad4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.1" />
+    </radialGradient>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#050816"/>
+
+  <!-- Background Gradient Overlay -->
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#1e1b4b;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#050816;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Animated Background Circles -->
+  <circle cx="150" cy="100" r="180" fill="url(#grad4)" class="pulsing" opacity="0.4"/>
+  <circle cx="700" cy="500" r="220" fill="url(#grad4)" class="pulsing" opacity="0.3" style="animation-delay: 0.5s;"/>
+
+  <!-- Rotating Orbits -->
+  <g class="rotating" opacity="0.15">
+    <circle cx="400" cy="300" r="180" fill="none" stroke="url(#grad1)" stroke-width="2"/>
+    <circle cx="400" cy="300" r="240" fill="none" stroke="url(#grad2)" stroke-width="1.5"/>
+    <circle cx="400" cy="300" r="300" fill="none" stroke="url(#grad3)" stroke-width="1"/>
+  </g>
+
+  <!-- Main Content Container -->
+  <g class="floating">
+    <!-- Outer Ring -->
+    <circle cx="400" cy="300" r="130" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.8"/>
+    <circle cx="400" cy="300" r="125" fill="none" stroke="url(#grad2)" stroke-width="1" opacity="0.5"/>
+
+    <!-- Central Circle with Gradient -->
+    <circle cx="400" cy="300" r="100" fill="url(#grad4)" opacity="0.3"/>
+    <circle cx="400" cy="300" r="100" fill="none" stroke="url(#grad1)" stroke-width="2.5" class="glowing"/>
+
+    <!-- Inner Decorative Circle -->
+    <circle cx="400" cy="300" r="75" fill="none" stroke="url(#grad2)" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Code Brackets Symbol -->
+    <g transform="translate(400, 300)">
+      <!-- Left Bracket -->
+      <path d="M -45 -55 L -55 -55 L -55 55 L -45 55" fill="none" stroke="url(#grad1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <!-- Right Bracket -->
+      <path d="M 45 -55 L 55 -55 L 55 55 L 45 55" fill="none" stroke="url(#grad2)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Center Dots -->
+      <circle cx="-18" cy="-25" r="5" fill="url(#grad1)" class="glowing"/>
+      <circle cx="0" cy="0" r="5" fill="url(#grad2)" class="glowing"/>
+      <circle cx="18" cy="25" r="5" fill="url(#grad1)" class="glowing"/>
+
+      <!-- Connecting Lines -->
+      <line x1="-18" y1="-25" x2="0" y2="0" stroke="url(#grad1)" stroke-width="1" opacity="0.5"/>
+      <line x1="0" y1="0" x2="18" y2="25" stroke="url(#grad2)" stroke-width="1" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Floating Corner Elements -->
+  <g class="floating" style="animation-delay: 0.3s;">
+    <!-- Top Left -->
+    <rect x="70" y="70" width="70" height="70" rx="12" fill="none" stroke="url(#grad1)" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="105" cy="105" r="10" fill="url(#grad1)" opacity="0.9"/>
+    <line x1="75" y1="75" x2="135" y2="135" stroke="url(#grad1)" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <g class="floating" style="animation-delay: 0.8s;">
+    <!-- Top Right -->
+    <circle cx="710" cy="110" r="50" fill="none" stroke="url(#grad2)" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="710" cy="110" r="35" fill="none" stroke="url(#grad2)" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="710" cy="110" r="20" fill="url(#grad2)" opacity="0.6"/>
+  </g>
+
+  <g class="floating" style="animation-delay: 1.2s;">
+    <!-- Bottom Left -->
+    <polygon points="110,510 150,480 190,510 150,540" fill="none" stroke="url(#grad1)" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="150" cy="510" r="8" fill="url(#grad1)" opacity="0.9"/>
+  </g>
+
+  <g class="floating" style="animation-delay: 0.5s;">
+    <!-- Bottom Right -->
+    <rect x="640" y="440" width="100" height="100" rx="20" fill="none" stroke="url(#grad2)" stroke-width="2.5" opacity="0.7" transform="rotate(45 690 490)"/>
+    <circle cx="690" cy="490" r="12" fill="url(#grad2)" opacity="0.8"/>
+  </g>
+
+  <!-- Tech Stack Indicators with Animations -->
+  <g opacity="0.8">
+    <!-- React Circle -->
+    <g class="floating" style="animation-delay: 0.2s;">
+      <circle cx="200" cy="150" r="32" fill="none" stroke="url(#grad1)" stroke-width="2.5"/>
+      <circle cx="200" cy="150" r="26" fill="url(#grad1)" opacity="0.1"/>
+      <text x="200" y="162" text-anchor="middle" fill="url(#grad1)" font-size="18" font-weight="bold">⚛</text>
+    </g>
+
+    <!-- Node Circle -->
+    <g class="floating" style="animation-delay: 0.6s;">
+      <circle cx="600" cy="180" r="32" fill="none" stroke="url(#grad2)" stroke-width="2.5"/>
+      <circle cx="600" cy="180" r="26" fill="url(#grad2)" opacity="0.1"/>
+      <text x="600" y="192" text-anchor="middle" fill="url(#grad2)" font-size="18" font-weight="bold">⚙</text>
+    </g>
+
+    <!-- Database Circle -->
+    <g class="floating" style="animation-delay: 1s;">
+      <circle cx="150" cy="460" r="32" fill="none" stroke="url(#grad1)" stroke-width="2.5"/>
+      <circle cx="150" cy="460" r="26" fill="url(#grad1)" opacity="0.1"/>
+      <text x="150" y="472" text-anchor="middle" fill="url(#grad1)" font-size="18" font-weight="bold">💾</text>
+    </g>
+
+    <!-- API Circle -->
+    <g class="floating" style="animation-delay: 0.4s;">
+      <circle cx="650" cy="430" r="32" fill="none" stroke="url(#grad2)" stroke-width="2.5"/>
+      <circle cx="650" cy="430" r="26" fill="url(#grad2)" opacity="0.1"/>
+      <text x="650" y="442" text-anchor="middle" fill="url(#grad2)" font-size="18" font-weight="bold">🔌</text>
+    </g>
+  </g>
+
+  <!-- Connecting Lines with Animation -->
+  <g stroke="url(#grad1)" stroke-width="1.5" opacity="0.25" stroke-dasharray="8,4" class="pulsing">
+    <line x1="232" y1="182" x2="368" y2="268"/>
+    <line x1="568" y1="212" x2="432" y2="332"/>
+    <line x1="182" y1="492" x2="368" y2="368"/>
+    <line x1="618" y1="462" x2="432" y2="332"/>
+  </g>
+
+  <!-- Central Glow Effect -->
+  <circle cx="400" cy="300" r="160" fill="url(#grad1)" opacity="0.04" filter="url(#glow)"/>
+
+  <!-- Accent Lines -->
+  <g stroke="url(#grad2)" stroke-width="1" opacity="0.3">
+    <line x1="300" y1="200" x2="500" y2="200" stroke-dasharray="5,5"/>
+    <line x1="300" y1="400" x2="500" y2="400" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Bottom Text Label -->
+  <text x="400" y="570" text-anchor="middle" fill="#a3a3a3" font-size="15" font-weight="500" opacity="0.8">
+    Full-Stack Development • Modern Solutions • Afaq Systems
+  </text>
+
+  <!-- Version Badge -->
+  <g opacity="0.6">
+    <rect x="30" y="30" width="120" height="35" rx="8" fill="none" stroke="url(#grad1)" stroke-width="1.5"/>
+    <text x="90" y="52" text-anchor="middle" fill="url(#grad1)" font-size="12" font-weight="600">v2.0 Hero</text>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+# Local tooling / editors
+.qodo/
+.DS_Store
+Thumbs.db
+
+# Node logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Build output (if any placed at root)
+dist/
+build/
+

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <mask id="bowlCut">
+      <rect width="64" height="64" fill="#000" />
+      <path d="M8 44 C 20 28, 44 28, 56 44 L 56 54 L 8 54 Z" fill="#fff" />
+      <path d="M12 44 C 24 34, 40 34, 52 44" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none" />
+      <path d="M24 52 C 30 42, 40 40, 50 48" stroke="#000" stroke-width="5" stroke-linecap="round" fill="none" />
+    </mask>
+  </defs>
+  <circle cx="32" cy="18" r="8" fill="#0a8f3e" />
+  <g mask="url(#bowlCut)">
+    <rect x="0" y="0" width="64" height="64" fill="#0a8f3e" />
+  </g>
+</svg>
+
