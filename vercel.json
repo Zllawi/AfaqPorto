@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "installCommand": "npm run install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "my-portfolio/dist",
+  "framework": "vite",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}
+
