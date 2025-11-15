@@ -350,7 +350,9 @@ img {
   display: block;
   width: 34px;
   height: 34px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff; /* ensures clean circular edge around green mark */
 }
 
 .brand-logo .brand-words {
@@ -938,4 +940,3 @@ section {
   font-size: 22px;
   cursor: pointer;
 }
-
