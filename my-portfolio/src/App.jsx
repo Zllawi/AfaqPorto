@@ -3,10 +3,20 @@ import BrandLogo from "./components/BrandLogo.jsx";
 
 export default function App() {
   const year = new Date().getFullYear();
+  const [viewer, setViewer] = useState(null);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-    const [viewer, setViewer] = useState(null);
   return (
-    <div className="page" dir="rtl">
+    <div className={`page ${isDarkMode ? 'dark-mode' : 'light-mode'}`} dir="rtl">
+      {/* ====== Theme Toggle Button ====== */}
+      <button 
+        className="theme-toggle" 
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        aria-label="Toggle theme"
+        title={isDarkMode ? "الوضع الفاتح" : "الوضع الداكن"}
+      >
+        {isDarkMode ? '☀️' : '🌙'}
+      </button>
       {/* ====== Navbar ====== */}
       <header className="header">
         <div className="container">
